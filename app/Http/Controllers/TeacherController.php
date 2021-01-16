@@ -67,7 +67,8 @@ class TeacherController extends Controller
      */
     public function show($id)
     {
-        //
+        $teacher = Teacher::find($id);
+        return view('teachers.view_teacher',compact('teacher')); 
     }
 
     /**
@@ -78,7 +79,10 @@ class TeacherController extends Controller
      */
     public function edit($id)
     {
-        //
+        $teacher = Teacher::find($id);
+        $departments = Department::all();
+        $positions = Position::all();
+        return view('teachers.update_teachers',compact('teacher','departments','positions'));
     }
 
     /**
@@ -90,7 +94,35 @@ class TeacherController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $teacher = Teacher::find($id);
+        request()->validate([
+            'name' => 'required',
+            'position' => 'required',
+            'department' => 'required',
+            'teacher_id' => 'required',
+            'gender' => 'required',
+            'father_name' => 'required',
+            'birthday' => 'required',
+            'phone_number' => 'required',
+            'address' => 'required',
+        ]);
+        $teacher->name = $request->name;
+        $teacher->department_id = $request->department;
+        $teacher->father_name = $request->father_name;
+        $teacher->address = $request->address;
+        $teacher->gender = $request->gender;
+        $teacher->birthday = $request->birthday;
+        $teacher->teacher_id = $request->teacher_id;
+        $teacher->position_id = $request->position;
+        $teacher->phone_number = $request->phone_number;
+
+        if($request->teacher_image){
+            $image = date('YmdHis').'.'.request()->teacher_image->getClientOriginalExtension();
+            request()->teacher_image->move(public_path('images'),$image);
+            $teacher->teacher_image = $image;
+        }
+        $teacher->save();
+        return redirect('teachers')->with('messages','Teacher profile successfully updated!');
     }
 
     /**

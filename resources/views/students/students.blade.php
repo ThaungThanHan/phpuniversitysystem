@@ -35,7 +35,7 @@
                 {{ session('message') }}
               </div>
               @endif
-            <a href="/students/create" class="btn btn-success">Add Students</a>
+            <a href="/students/create" class="btn btn-success" style="margin-left:1rem;">Add Students</a>
 
                 <div class="container-fluid">
                   <div class="row">
@@ -48,7 +48,8 @@
                           </div>
                           <p class="card-category">{{$student->student_id}}</p>
                           <h3 class="card-title">{{$student->name}}<br/>
-                            <small>{{$student->academicyear->name}}</small>
+                            <small>{{$student->academicyear->name}}</small><br/>
+                            <small>{{$student->department->name}}</small>
                           </h3>
                         </div>
                         <div class="card-footer">

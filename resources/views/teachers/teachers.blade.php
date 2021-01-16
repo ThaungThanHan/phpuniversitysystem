@@ -35,7 +35,7 @@
                 {{ session('message') }}
               </div>
               @endif
-            <a href="/teachers/create" class="btn btn-success">Add teacher</a>
+            <a href="/teachers/create" class="btn btn-success" style="margin-left:1rem;">Add teacher</a>
 
                 <div class="container-fluid">
                   <div class="row">

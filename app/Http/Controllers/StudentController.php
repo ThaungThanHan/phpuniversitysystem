@@ -84,7 +84,10 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        $academicyears = AcademicYear::all();
+        $departments = Department::all();
+        return view('students.update_students',compact('student','departments','academicyears'));
     }
 
     /**
@@ -96,7 +99,35 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = Student::find($id);
+        request()->validate([
+            'name' => 'required',
+            'year' => 'required',
+            'department' => 'required',
+            'student_id' => 'required',
+            'gender' => 'required',
+            'father_name' => 'required',
+            'birthday' => 'required',
+            'phone_number' => 'required',
+            'address' => 'required',
+        ]);
+        $student->name = $request->name;
+        $student->department_id = $request->department;
+        $student->father_name = $request->father_name;
+        $student->address = $request->address;
+        $student->gender = $request->gender;
+        $student->birthday = $request->birthday;
+        $student->student_id = $request->student_id;
+        $student->academicyear_id = $request->year;
+        $student->phone_number = $request->phone_number;
+
+        if($request->student_image){
+            $image = date('YmdHis').'.'.request()->student_image->getClientOriginalExtension();
+            request()->student_image->move(public_path('images'),$image);
+            $student->student_image = $image;
+        }
+        $student->save();
+        return redirect('students')->with('messages','Student profile successfully updated!');
     }
 
     /**
@@ -107,6 +138,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect('students')->with('messages','Student deleted successfully!');
     }
 }
