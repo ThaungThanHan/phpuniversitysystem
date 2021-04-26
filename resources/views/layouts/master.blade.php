@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="../../assets/css/material-dashboard.min.css?v=2.1.2" rel="stylesheet" />
+
+  <link rel="stylesheet" href="{{ mix('/css/rollsheet.css') }}">
     <title>School System</title>
 </head>
 <body>
@@ -23,9 +25,15 @@
               </a></div>
             <div class="sidebar-wrapper">
               <ul class="nav">
+              <li class="nav-item {{Request::segment(1) == 'attendance' ? 'active' : '' }}  ">  <!-- getting segment from URL -->
+                  <a class="nav-link" href="/attendance">
+                    <i class="material-icons">fact_check</i>
+                    <p>Attendance</p>
+                  </a>
+                </li>
                 <li class="nav-item {{Request::segment(1) == 'students' ? 'active' : '' }}  ">  <!-- getting segment from URL -->
                   <a class="nav-link" href="/students">
-                    <i class="material-icons">dashboard</i>
+                    <i class="material-icons">person_search</i>
                     <p>Students</p>
                   </a>
                 </li>
@@ -33,6 +41,12 @@
                   <a class="nav-link" href="/teachers">
                     <i class="material-icons">person</i>
                     <p>Teachers</p>
+                  </a>
+                </li>
+                <li class="nav-item {{Request::segment(1) == 'programs' ? 'active' : '' }} ">
+                  <a class="nav-link" href="/programs">
+                    <i class="material-icons">event</i>
+                    <p>Programs</p>
                   </a>
                 </li>
               </ul>

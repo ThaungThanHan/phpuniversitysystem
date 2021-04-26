@@ -1,0 +1,101 @@
+.herosection {
+  border: 1px solid transparent;
+  background-image: url("/../images/heroimage.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 65vh;
+}
+
+.Hero {
+  margin: 0 auto;
+  padding: 0 5rem;
+  max-width: 100rem;
+  height: 65vh;
+}
+
+.textwrapper {
+  color: white;
+  width: 50rem;
+  margin-top: 10rem;
+  padding: 3rem;
+}
+
+.textwrapper-title {
+  color: white;
+  font-size: 3rem;
+}
+
+.textwrapper-paragraph {
+  font-size: 1.5rem;
+}
+
+.textwrapper-button {
+  font-style: none;
+  color: white;
+  border: none;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #fbc43f;
+  transition: all .2s;
+}
+
+.textwrapper-button:hover {
+  background-color: white;
+  text-decoration: none;
+  color: #fbc43f;
+  border: .5px solid #fbc43f;
+}
+
+.aboutsection {
+  padding: 1rem 0;
+  margin-top: -10rem;
+  max-height: 50vh;
+}
+
+.aboutgrid-container {
+  margin: 0 auto;
+  max-width: 100rem;
+  display: flex;
+  padding: 10rem;
+  justify-content: space-between;
+}
+
+.aboutgrid-container--textwrap {
+  width: 45rem;
+}
+
+.aboutgrid-container--textwrap--title {
+  font-size: 3rem;
+}
+
+.aboutgrid-container--textwrap--paragraph {
+  font-size: 1.5rem;
+  color: grey;
+}
+
+.aboutgrid-container--textwrap--button {
+  font-style: none;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  background-color: #fbc43f;
+  transition: all .2s;
+}
+
+.aboutgrid-container--textwrap--button:hover {
+  background-color: white;
+  text-decoration: none;
+  color: #fbc43f;
+  border: .5px solid #fbc43f;
+}
+
+.aboutgrid-container--image {
+  background-image: url("/images/webpage/classroom.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 30rem;
+}
+

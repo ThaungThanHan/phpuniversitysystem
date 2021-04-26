@@ -9,6 +9,7 @@ use App\Models\Department;
 use App\Models\AcademicYear;
 use Illuminate\Http\Request;
 use App\Http\Requests\studentcreateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -20,8 +21,10 @@ class StudentController extends Controller
     public function index()
     {
         $students = Student::all();
+        $user = Auth::user();
         $academicyears = AcademicYear::all();
-        return view('students.students',compact('students','academicyears'));
+        // dd($user);
+        return view('students.students',compact('students','academicyears','user'));
     }
 
     /**

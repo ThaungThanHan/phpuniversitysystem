@@ -35,32 +35,12 @@
                 {{ session('message') }}
               </div>
               @endif
-            <a href="/students/create" class="btn btn-success" style="margin-left:1rem;">Add Students</a>
-
-                <div class="container-fluid">
+            <a href="/attendance/rollcall" class="btn btn-success" style="margin-left:1rem;">Roll call</a>
+            <div class="container-fluid">
                   <div class="row">
-                    @foreach($students as $student)
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                      <div class="card card-stats">
-                        <div class="card-header card-header-warning card-header-icon">
-                          <div class="card-icon">
-                            <img style="width:10rem;height:10rem" src="{{url('/images/'.$student->student_image)}}"/>
-                          </div>
-                          <p class="card-category">{{$student->student_id}}</p>
-                          <h3 class="card-title">{{$student->name}}<br/>
-                            <small>{{$student->academicyear->name}}</small><br/>
-                            <small>{{$student->department->name}}</small>
-                          </h3>
-                        </div>
-                        <div class="card-footer">
-                          <div class="stats">
-                            <a href="/students/{{$student->id}}" class="btn btn-primary">See more info</a>
-                          </div>
-                        </div>
-                      </div>
+
                     </div>
-                    @endforeach
-                    </div>
+                  </div>
                   </div>
                     </div>
                   </div>

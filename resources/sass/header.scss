@@ -1,0 +1,73 @@
+.header_container{
+    margin:0;
+    // border:1px solid black;
+    padding:0;
+    position:relative;
+    width:100%;
+    font-family:'Ubuntu';
+    font-size:3rem;
+    font-size:1rem;
+}
+.nav-bar{
+    // border:1px solid pink;
+    margin:0 auto;          // this makes it responsive on zoom in and out..obj will sit centrally in the parent container
+    max-width:100rem;
+    min-height:10rem;
+    padding: 0 10rem;
+    
+
+}
+.nav-items{
+    display:flex;
+    // border:1px solid red;
+    justify-content: space-evenly;
+    list-style:none;
+    margin-top:3rem;
+    min-width:50rem;
+    float:right;
+    padding:1rem 3rem;
+    height:3rem;
+    text-align:center;
+    &--link{
+        color:#191919;
+        font-style:none;
+        text-decoration: none;
+        &:hover{
+            color:#fbc43f;
+            text-decoration: none;
+        }
+    }
+}
+.logo{
+    display: block;
+    float: left;
+    height: 3rem;
+    margin-top:0rem;
+    padding: 0;
+    width: 15rem;height:10rem;
+    // border:1px solid red;
+}
+.nav-items li{
+    display: inline-block;
+	*float: left; /* Needed for IE7 and old versions */
+	// margin: 0 0 0 37px;
+    padding:0;
+    width: auto;
+}
+.nav-button{
+    color:#191919;
+    font-style: none;
+    padding:1rem;
+    border:none;
+    border-radius:1rem;
+    background-color: #fbc43f;
+    outline: none;  
+    text-decoration: none;
+    transition:all .2s;
+    &:hover{
+        text-decoration: none;
+        color:#fbc43f;
+        border:1px solid #fbc43f;
+        background-color:white;
+    }
+}
